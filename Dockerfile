@@ -1,4 +1,19 @@
 FROM openjdk:8-jdk
+MAINTAINER Tonybearpan "tonybearpan@163.com"
+
+RUN apk add --update mysql && rm -f /var/cache/apk/*
+RUN apk add --update make cmake gcc g++ gfortran
+RUN apk add --update python py-pip python-dev
+RUN apk add py-mysqldb
+RUN pip install redis
+RUN pip install requests
+RUN pip install robotframework
+RUN pip install sqlalchemy
+RUN pip install testrail-lib
+RUN pip install robotframework-selenium2library
+RUN pip install padding
+RUN pip install pycrypto
+RUN pip install mysql
 
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
